@@ -12,8 +12,6 @@
     <maven.compiler.plugin.version>2.3.2</maven.compiler.plugin.version>
     <maven.source.plugin.version>2.1.2</maven.source.plugin.version>
     <!-- Bedework Versions -->
-		<bedework.releases.repo.url>scp://dev.bedework.org/data/repository/maven/maven2</bedework.releases.repo.url>
-		<bedework.snapshots.repo.url>scp://dev.bedework.org/data/repository/maven/maven2</bedework.snapshots.repo.url>
     <bw-ws.version>4.0.1-SNAPSHOT</bw-ws.version>
     <!-- Third Party Library Versions -->
     <commons-codec.version>1.5</commons-codec.version>
@@ -48,6 +46,18 @@
     <developerConnection>scm:git:git@github.com:Bedework/bw-util.git</developerConnection>
     <url>https://github.com/Bedework/bw-util</url>
   </scm>
+  <distributionManagement>
+    <repository>
+      <id>sonatype-nexus-staging</id>
+      <name>Nexus Release Repository</name>
+      <url>https://oss.sonatype.org/service/local/staging/deploy/maven2/</url>
+    </repository>
+    <snapshotRepository>
+      <id>sonatype-nexus-snapshots</id>
+      <name>Sonatype Nexus Snapshots</name>
+      <url>https://oss.sonatype.org/content/repositories/snapshots/</url>
+    </snapshotRepository>
+  </distributionManagement>
 
   <issueManagement>
     <system>github</system>
@@ -212,20 +222,7 @@
       </snapshots>
     </repository>
   </repositories>
-
-  <distributionManagement>
-    <repository>
-      <id>bedework-releases-repository</id>
-      <name>Bedework Releases Repository</name>
-      <url>${bedework.releases.repo.url}</url>
-    </repository>
-    <snapshotRepository>
-      <id>bedework-snapshots-repository</id>
-      <name>Bedework Snapshots Repository</name>
-      <url>${bedework.snapshots.repo.url}</url>
-    </snapshotRepository>
-  </distributionManagement>
-
+  
   <build>
     <extensions>
       <extension>
